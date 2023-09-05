@@ -1,0 +1,47 @@
+---
+import Layout from "../layout/Layout.astro";
+---
+
+<Layout title="Home | Sneharsh">
+  <div id="backdrop" class="h-100-dvh w-screen px-2 text-white">
+    <main class="h-full w-full flex flex-col justify-center items-center">
+      <!-- Intro text -->
+      <div class="font-cursive text-2xl md:text-3xl">
+        Hello <img
+          class="inline h-16"
+          src="https://c.tenor.com/Wx9IEmZZXSoAAAAi/hi.gif"
+          alt="hi"
+        /> I am
+      </div>
+      <div class="font-mono font-bold text-4xl md:text-6xl">
+        Sneharsh Belsare
+      </div>
+
+      <!-- Sections -->
+      <div
+        class="mt-8 flex flex-col md:flex-row justify-center items-end space-y-4 md:space-x-4 font-mono"
+      >
+        <a
+          href="/about"
+          class="h-16 w-64 md:w-36 rounded-md bg-slate-100/40 backdrop-blur-sm flex justify-center items-center cursor-pointer text-lg hover:bg-slate-100/60 transition-all duration-200"
+          transition:name="about-hero"
+          >
+          About
+        </a>
+        <a
+        href="/projects"
+        class="h-16 w-64 md:w-36 rounded-md bg-slate-100/40 backdrop-blur-sm flex justify-center items-center cursor-pointer text-lg hover:bg-slate-100/60 transition-all duration-200"
+        transition:name="projects-hero"
+        >
+          Projects
+        </a>
+        <a
+          href="/contact"
+          class="h-16 w-64 md:w-36 rounded-md bg-slate-100/40 backdrop-blur-sm flex justify-center items-center cursor-pointer text-lg hover:bg-slate-100/60 transition-all duration-200"
+        >
+          Contact
+        </a>
+      </div>
+    </main>
+  </div>
+</Layout>

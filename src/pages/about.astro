@@ -1,0 +1,174 @@
+---
+import Layout from "../layout/Layout.astro";
+
+type SkillItem = {
+  name: string;
+  iconClass: string;
+  colorClass: string;
+};
+
+function compareFn(a: SkillItem, b: SkillItem) {
+  return a.name > b.name ? 1 : -1;
+}
+
+const Skills: SkillItem[] = [
+  {
+    name: "HTML",
+    iconClass: "devicon-html5-plain",
+    colorClass: "text-orange-600",
+  },
+  {
+    name: "CSS",
+    iconClass: "devicon-css3-plain",
+    colorClass: "text-green-600",
+  },
+  {
+    name: "Javascript",
+    iconClass: "devicon-javascript-plain",
+    colorClass: "text-yellow-600",
+  },
+  {
+    name: "Bootstrap",
+    iconClass: "devicon-bootstrap-plain",
+    colorClass: "text-purple-500",
+  },
+  {
+    name: "TailwindCSS",
+    iconClass: "devicon-tailwindcss-plain",
+    colorClass: "text-cyan-500",
+  },
+  {
+    name: "NodeJs",
+    iconClass: "devicon-nodejs-plain",
+    colorClass: "text-green-400",
+  },
+  {
+    name: "ExpressJs",
+    iconClass: "devicon-express-original",
+    colorClass: "text-black",
+  },
+  {
+    name: "ReactJs",
+    iconClass: "devicon-react-original",
+    colorClass: "text-blue-300",
+  },
+  {
+    name: "Material UI",
+    iconClass: "devicon-materialui-plain",
+    colorClass: "text-blue-400",
+  },
+  {
+    name: "NextJs",
+    iconClass: "devicon-nextjs-original",
+    colorClass: "text-black",
+  },
+  {
+    name: "Redux",
+    iconClass: "devicon-redux-original",
+    colorClass: "text-purple-500",
+  },
+  {
+    name: "Git",
+    iconClass: "devicon-git-plain",
+    colorClass: "text-orange-600",
+  },
+  {
+    name: "GitHub",
+    iconClass: "devicon-github-original",
+    colorClass: "text-black",
+  },
+  {
+    name: "Django",
+    iconClass: "devicon-django-plain",
+    colorClass: "text-green-700",
+  },
+  {
+    name: "Flutter",
+    iconClass: "devicon-flutter-plain",
+    colorClass: "text-blue-400",
+  },
+  {
+    name: "Firebase",
+    iconClass: "devicon-firebase-plain",
+    colorClass: "text-orange-400",
+  },
+  {
+    name: "Flask",
+    iconClass: "devicon-flask-plain",
+    colorClass: "text-green-700",
+  },
+  {
+    name: "AWS",
+    iconClass: "devicon-amazonwebservices-original",
+    colorClass: "text-orange-500",
+  },
+  {
+    name: "Ubuntu",
+    iconClass: "devicon-ubuntu-plain",
+    colorClass: "text-orange-500",
+  },
+];
+---
+
+<Layout title="About | Sneharsh Belsare">
+  <div class="p-2 sticky top-0 left-0">
+    <a
+      class="h-12 w-28 md:w-28 rounded-md text-white bg-slate-800/40 backdrop-blur-sm flex justify-center items-center cursor-pointer text-lg hover:bg-slate-800/60 transition-all duration-200"
+      href="/"
+      transition:name="about-hero"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="w-6 h-6 mr-2 -ml-2"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M15.75 19.5L8.25 12l7.5-7.5"></path>
+      </svg>
+       Back
+    </a>
+  </div>
+  <div class="h-100-dvh max-w-7xl mx-auto bg-white text-black p-4 font-mono fade-up">
+    <!-- Header -->
+    <div
+      class="w-min text-6xl mt-5 font-bold bg-gradient-to-br from-green-400 to-blue-600 bg-clip-text text-transparent"
+    >
+      About
+    </div>
+    <br />
+    <div class="font-mono">
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit
+      amet et nisi totam. Fuga ipsum vero nemo distinctio rerum doloribus.
+    </div>
+    <br />
+    <br />
+
+    <!-- skills -->
+    <div
+      class="text-4xl font-bold bg-gradient-to-br from-green-400 to-blue-600 bg-clip-text text-transparent"
+    >
+      My skills
+    </div>
+    <br />
+    <div class="bg-gray-200 rounded-md p-4">
+      <ul
+        class="grid gap-2 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5"
+      >
+        {
+          Skills.sort(compareFn).map((Skill) => (
+            <li class={`bg-white p-2 text-lg rounded-md ${Skill.colorClass}`}>
+              <i class={Skill.iconClass} />
+              {" " + Skill.name}
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+    <br>
+  </div>
+</Layout>
